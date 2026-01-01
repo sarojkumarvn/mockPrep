@@ -20,10 +20,14 @@ app.get("/books", (req , res)=>{
     res.status(200).json({msg : "Book part is running fine ...."})
 })
 
-//making the app ready for deployment
+//making the app ready for deployment 
 if(ENV.NODE_ENV === "production"){
     app.use(express.static(path.join(__dirname , "../frontend/dist")));
+     
 
+
+
+    //Any routes not handled before will be handled here 
     app.get("/{*any}", (req , res)=>{
         res.sendFile(path.join(__dirname , "../frontend" , "dist" , "index.html"));
     });
