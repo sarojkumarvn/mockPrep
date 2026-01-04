@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
     },
     profileImage : {
         type: String,
-        default: "https://res.cloudinary.com/dqyjz9z5w/image/upload/v1695123206/ProfileImage/DefaultProfileImage_gqo8xw.jpg"
+        default : ""
     } ,
     clerkId : {
         type: String,
@@ -23,6 +23,6 @@ const userSchema = new mongoose.Schema({
     {timestamps: true,}
 )
 
-const user = mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
 
-export default user
+export default User
