@@ -1,14 +1,15 @@
 import express from "express";
 import path from "path";
-const app = express();
 import dotenv from "dotenv";
-import { ENV } from "./lib/env.js";
-import connectDB from "../src/lib/db.js";
 import cors from "cors";
 import { serve } from "inngest/express";
-import { inngest, functions } from "./src/lib/inngest.js";
+
+import { ENV } from "./lib/env.js";
+import connectDB from "./lib/db.js";
+import { inngest, functions } from "./lib/inngest.js";
 dotenv.config();
 
+const app = express();
 const __dirname = path.resolve();
 
 // server allows a browser to include cookies on requests
