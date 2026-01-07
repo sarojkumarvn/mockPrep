@@ -7,7 +7,7 @@ import User from '../models/User.js';
  export const inngest = new Inngest({ id: "mockprep" });
 
  const syncUser = inngest.createFunction(
-    {id:"suncUser"},
+    {id:"syncUser"},
     {event:"clerk/user.created"},
     async ({event}) => {
         await connectDB();

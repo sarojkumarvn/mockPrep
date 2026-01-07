@@ -11,7 +11,7 @@ dotenv.config();
 
 const app = express();
 
-
+// server allows a browser to add cookies ....
 app.use(
   cors({
     origin: ENV.CLIENT_URL,
